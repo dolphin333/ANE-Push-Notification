@@ -214,7 +214,7 @@ public class C2DMBroadcastReceiver extends BroadcastReceiver {
 		PendingIntent contentIntent = null;
 		notificationIntent = new Intent(context, NotificationActivity.class);
 		notificationIntent.putExtra("params", parameters);
-		contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
+		contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 		Notification notification = new Notification(icon, tickerText, when);
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
